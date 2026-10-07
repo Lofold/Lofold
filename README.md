@@ -31,22 +31,6 @@ My main areas of interest are:
 
 ---
 
-## Current project
-
-### Telco Customer Churn ML
-
-Development of a machine learning system for customer churn analysis and prediction.
-
-**Project workflow:**
-
-`Data → Data Quality → Preprocessing → EDA → Feature Engineering → ML → Evaluation → Prediction`
-
-Repository:
-
-[**telco-customer-churn-ml**](https://github.com/Lofold/telco-customer-churn-ml)
-
----
-
 ## Tech stack
 
 <p align="center">
@@ -64,8 +48,6 @@ Repository:
 </p>
 
 ---
-
-## GitHub statistics
 
 <p align="center">
   <img height="170" src="https://github-readme-stats.vercel.app/api?username=Lofold&show_icons=true&hide_border=true&theme=transparent" alt="GitHub Stats">
