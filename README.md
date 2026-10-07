@@ -31,8 +31,6 @@ My main areas of interest are:
 
 ---
 
-## Tech stack
-
 <p align="center">
 
 <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
@@ -56,9 +54,9 @@ My main areas of interest are:
 
 ---
 
-## Contribution Snake
-
 <p align="center">
+
+## Contribution Snake
 
 <picture>
   <source
