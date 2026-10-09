@@ -106,7 +106,7 @@ for row_icons, row_width in zip(rows, row_widths):
 svg += '</svg>'
 
 # --- СОХРАНЕНИЕ РЯДОМ СО СКРИПТОМ ---
-OUTPUT = "matrix.svg"
+OUTPUT = ICONS_DIR / "matrix.svg"
 with open(OUTPUT, "w", encoding="utf-8") as f:
     f.write(svg)
 
