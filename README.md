@@ -4,30 +4,8 @@
     <a href="https://github.com/Lofold" target="_blank" rel="noopener noreferrer"><img
             src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:39c5cf,100:0d1117&height=200&section=header&text=Lofold&fontFamily=monospace&fontSize=50&fontColor=39ccd7&animation=twinkling&fontAlign=15&fontAlignY=30&rotate=0&desc=Don’t+compete+with+me+in+indifference.-nl-In+indifference,+I’m+the+absolute.&descSize=16&descAlign=75&descAlignY=45"
             alt="Lofold" /></a>
-    <br>
-    <!-- IDE & Platforms -->
-    <a href="https://www.sublimetext.com" target="_blank" rel="noopener noreferrer"><img
-            src="https://skillicons.dev/icons?i=sublime" height="32" alt="Sublime Text" /></a>
-    <a href="https://code.visualstudio.com" target="_blank" rel="noopener noreferrer"><img
-            src="https://skillicons.dev/icons?i=vscode" height="32" alt="Visual Studio Code" /></a>
-    <a href="https://www.jetbrains.com/pycharm" target="_blank" rel="noopener noreferrer"><img
-            src="https://skillicons.dev/icons?i=pycharm" height="32" alt="Pycharm" /></a>
-    <a href="https://github.com/Lofold" target="_blank" rel="noopener noreferrer"><img
-            src="https://skillicons.dev/icons?i=github" height="32" alt="GitHub" /></a>
-    <a href="https://git-scm.com" target="_blank" rel="noopener noreferrer"><img
-            src="https://skillicons.dev/icons?i=git" height="32" alt="Git" /></a>
-    <br>
-    <!-- Programming Languages -->
-    <a href="https://www.python.org" target="_blank" rel="noopener noreferrer"><img
-            src="https://skillicons.dev/icons?i=py" height="32" alt="Python" /></a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer"><img
-            src="https://skillicons.dev/icons?i=css" height="32" alt="CSS" /></a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer"><img
-            src="https://skillicons.dev/icons?i=html" height="32" alt="HTML" /></a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer"><img
-            src="https://skillicons.dev/icons?i=js" height="32" alt="JavaScript" /></a>
-    <br>
 </div>
+
 <!-- MATRIX HACKER CHAOS -->
 <div align="center">
     <img src="matrix.svg" alt="Matrix Chaos" />
