@@ -6,9 +6,9 @@
             alt="Lofold" /></a>
 </div>
 
-<!-- MATRIX HACKER CHAOS -->
+<!-- MATRIX + Tech Stack -->
 <div align="center">
-    <img src="matrix.svg" alt="Matrix Chaos" />
+    <img src="assets/matrix.svg" alt="Matrix + Tech Stack" />
 </div>
 
 <!-- SNAKE -->
