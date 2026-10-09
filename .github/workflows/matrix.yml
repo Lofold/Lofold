@@ -2,27 +2,30 @@ name: Update Matrix SVG
 
 on:
   schedule:
-    - cron: '*/15 * * * *' # Запуск каждые 15 минут
-  workflow_dispatch: # Возможность запустить вручную
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      
+      - uses: actions/checkout@v4
+
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-          
+
       - name: Generate SVG
-        run: python icons/generate_matrix.py
-        
+        run: python scripts/generate_matrix.py       # ← путь к скрипту
+
       - name: Commit and Push
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add matrix.svg
+          git add assets/matrix.svg                  # ← путь к сгенерированному файлу
           git commit -m "Update matrix.svg" || exit 0
           git push
