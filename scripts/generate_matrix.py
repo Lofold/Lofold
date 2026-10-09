@@ -20,14 +20,14 @@ OUTPUT_SVG = BASE_DIR / "assets" / "matrix.svg"
 
 # --- СТРОКИ ИКОНОК ---
 row1_files = [
-    "Sublime-Lite.svg",
+    "Sublime-Light.svg",
     "VSCode-Dark.svg",
-    "PyCharm-Lite.svg",
-    "Github-Lite.svg",
+    "PyCharm-Light.svg",
+    "Github-Light.svg",
     "Git.svg",
 ]
 row2_files = [
-    "Python-Lite.svg",
+    "Python-Light.svg",
     "CSS.svg",
     "HTML.svg",
     "JavaScript.svg",
