@@ -17,7 +17,7 @@ jobs:
           python-version: '3.x'
           
       - name: Generate SVG
-        run: python generate_matrix.py
+        run: python icons/generate_matrix.py
         
       - name: Commit and Push
         run: |
