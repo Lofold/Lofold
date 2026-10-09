@@ -13,19 +13,21 @@ font_size = 16
 chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 num_cols = width // col_width
 
-# --- ПУТЬ К ИКОНКАМ (рядом со скриптом) ---
-ICONS_DIR = Path(__file__).resolve().parent
+# --- ПУТИ ---
+BASE_DIR   = Path(__file__).resolve().parent.parent   # корень репозитория
+ICONS_DIR  = BASE_DIR / "assets" / "icons"
+OUTPUT_SVG = BASE_DIR / "assets" / "matrix.svg"
 
 # --- СТРОКИ ИКОНОК ---
 row1_files = [
-    "Sublime-Dark.svg",
+    "Sublime-Lite.svg",
     "VSCode-Dark.svg",
-    "PyCharm-Dark.svg",
-    "Github-Dark.svg",
+    "PyCharm-Lite.svg",
+    "Github-Lite.svg",
     "Git.svg",
 ]
 row2_files = [
-    "Python-Dark.svg",
+    "Python-Lite.svg",
     "CSS.svg",
     "HTML.svg",
     "JavaScript.svg",
