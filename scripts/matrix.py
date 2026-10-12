@@ -1,16 +1,40 @@
 import base64
+import html
 import random
 from pathlib import Path
 
 # --- ХОЛСТ ---
 width = 1200
 height = 220
-bg_color = "#0d1117"
+bg_color = "#0d111700"
 
 # --- ДОЖДЬ ---
 col_width = 20
 font_size = 16
-chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+# Максимально богатый набор символов для дождя.
+# Все три XML-специальных знака (& < >) включены —
+# они безопасно превращаются в entity через html.escape() при вставке.
+chars = (
+    # --- Цифры и латиница ---
+    "0123456789"
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    "abcdefghijklmnopqrstuvwxyz"
+    # --- Пунктуация (включая XML-специальные) ---
+    "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
+    # --- Греческий (заглавные и строчные) ---
+    "ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ"
+    "αβγδεζηθικλμνξοπρστυφχψω"
+    # --- Кириллица (заглавные и строчные) ---
+    "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
+    "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
+    # --- Математика ---
+    "≠≤≥±×÷∞∑∏√∫≈≡∝∈∉⊂⊃⊆⊇∪∩∧∨¬∀∃∄∅∇∂"
+    "①②③④⑤⑥⑦⑧⑨⑩½⅓¼⅔¾⅛⅜⅝⅞"
+    # --- Стрелки ---
+    "←↑→↓↔↕↖↗↘↙⇐⇑⇒⇓⇔⇕"
+    # --- Прочие знаки ---
+    "†‡§¶©®™°′″¢£¥€₽§¤¦◊○●◘◙◦☼☽♀♂"
+)
 num_cols = width // col_width
 
 # --- ПУТИ ---
@@ -71,7 +95,7 @@ for i in range(num_cols):
     x = i * col_width + col_width // 2
     dur = random.uniform(2.0, 5.0)
     begin = random.uniform(0, 5.0)
-    char = random.choice(chars)
+    char = html.escape(random.choice(chars))  # ← экранируем сразу
     green = random.randint(150, 255)
     color = f"rgb(0, {green}, 0)"
 
@@ -82,7 +106,8 @@ for i in range(num_cols):
         f'dur="{dur}s" begin="{begin}s" repeatCount="indefinite" />'
     )
     svg += (
-        f'<text x="{x}" y="0" fill="{color}" font-family="monospace" '
+        f'<text x="{x}" y="0" fill="{color}" '
+        f'font-family="Consolas, Menlo, DejaVu Sans Mono, Noto Sans Mono, monospace" '
         f'font-size="{font_size}" text-anchor="middle">'
     )
     svg += (
