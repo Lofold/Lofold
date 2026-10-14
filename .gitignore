@@ -1,6 +1,6 @@
 # Локально сгенерированные SVG — публикуются в ветки *-output,
 # в main не нужны
-assets/matrix.svg
+assets/matrix-light.svg
 assets/matrix-dark.svg
 assets/snake_heart.svg
 

@@ -34,7 +34,7 @@ jobs:
       - name: Prepare dist
         run: |
           mkdir -p dist
-          cp assets/matrix.svg assets/matrix-dark.svg dist/
+          cp assets/matrix-light.svg assets/matrix-dark.svg dist/
 
       - name: Publish to matrix-output
         uses: crazy-max/ghaction-github-pages@v4

@@ -30,10 +30,10 @@
             <!-- prettier-ignore -->
             <source
                 media="(prefers-color-scheme: light)"
-                srcset="https://raw.githubusercontent.com/Lofold/Lofold/matrix-output/matrix.svg"
+                srcset="https://raw.githubusercontent.com/Lofold/Lofold/matrix-output/matrix-light.svg"
             />
             <img
-                src="https://raw.githubusercontent.com/Lofold/Lofold/matrix-output/matrix.svg"
+                src="https://raw.githubusercontent.com/Lofold/Lofold/matrix-output/matrix-light.svg"
                 width="96%"
                 alt="Matrix + Tech Stack"
             />

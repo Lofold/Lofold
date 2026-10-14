@@ -86,7 +86,7 @@ THEMES: dict[str, ThemeDict] = {
         ],
     },
     "light": {
-        "suffix": "",
+        "suffix": "-light",
         "bg": "#f6f8fa00",  # фон GitHub light
         "rain_min": 60,  # потемнее, чтобы было видно на светлом
         "rain_max": 160,
