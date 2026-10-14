@@ -9,7 +9,7 @@ width = 1012
 height = 200
 
 # --- ДОЖДЬ ---
-col_width = 20
+col_width = 48
 font_size = 16
 
 # Цвета дождя по вертикали: вверху — циановый, внизу — зелёный.
@@ -134,7 +134,6 @@ def build_matrix(theme_name: str) -> Path:
     # --- НАЧАЛО SVG ---
     svg = (
         f'<svg xmlns="http://www.w3.org/2000/svg" '
-        f'xmlns:xlink="http://www.w3.org/1999/xlink" '
         f'width="100%" height="{height}" '
         f'viewBox="0 0 {width} {height}" '
         f'preserveAspectRatio="xMidYMid meet">'
@@ -144,7 +143,7 @@ def build_matrix(theme_name: str) -> Path:
     # --- СЛОЙ 1: ДОЖДЬ ---
     for i in range(num_cols):
         x = i * col_width + col_width // 2
-        dur = random.uniform(2.0, 5.0)
+        dur = random.uniform(2.0, 6.0)
         begin = random.uniform(0, 5.0)
         char = html.escape(random.choice(chars))
 
@@ -158,7 +157,13 @@ def build_matrix(theme_name: str) -> Path:
         top_hex = "#{:02x}{:02x}{:02x}".format(*top_rgb)
         bot_hex = "#{:02x}{:02x}{:02x}".format(*bot_rgb)
 
-        svg += "<g>"
+        svg += (
+            f'<text x="{x}" y="{-font_size}" fill="{top_hex}" '
+            f'font-family="Consolas, Menlo, DejaVu Sans Mono, '
+            f'Noto Sans Mono, monospace" '
+            f'font-size="{font_size}" text-anchor="middle">'
+        )
+        # animateTransform — прямой ребёнок <text>, <g> не нужен
         svg += (
             f'<animateTransform attributeName="transform" '
             f'type="translate" '
@@ -166,14 +171,6 @@ def build_matrix(theme_name: str) -> Path:
             f'dur="{dur}s" begin="{begin}s" '
             f'repeatCount="indefinite" />'
         )
-        svg += (
-            f'<text x="{x}" y="{-font_size}" fill="{top_hex}" '
-            f'font-family="Consolas, Menlo, DejaVu Sans Mono, '
-            f'Noto Sans Mono, monospace" '
-            f'font-size="{font_size}" text-anchor="middle">'
-        )
-        # Цвет символа линейно уходит от cyan к green за то же время,
-        # за которое символ пролетает сверху вниз.
         svg += (
             f'<animate attributeName="fill" '
             f'values="{top_hex};{bot_hex}" '
@@ -185,7 +182,7 @@ def build_matrix(theme_name: str) -> Path:
             f'keyTimes="0;0.15;0.75;1" dur="{dur}s" begin="{begin}s" '
             f'repeatCount="indefinite" />'
         )
-        svg += f"{char}</text></g>"
+        svg += f"{char}</text>"
 
     # --- СЛОЙ 2: ИКОНКИ ---
     current_y = start_y
