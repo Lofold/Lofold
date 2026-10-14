@@ -12,6 +12,10 @@ height = 200
 col_width = 20
 font_size = 16
 
+# Цвета дождя по вертикали: вверху — циановый, внизу — зелёный.
+RAIN_COLOR_TOP = (0x39, 0xC5, 0xCF)  # #39c5cf — cyan из шапки профиля
+RAIN_COLOR_BOTTOM = (0x00, 0xFF, 0x00)  # зелёный
+
 # Максимально богатый набор символов для дождя.
 # Все три XML-специальных знака (& < >) включены —
 # они безопасно превращаются в entity через html.escape() при вставке.
@@ -143,8 +147,16 @@ def build_matrix(theme_name: str) -> Path:
         dur = random.uniform(2.0, 5.0)
         begin = random.uniform(0, 5.0)
         char = html.escape(random.choice(chars))
-        green = random.randint(theme["rain_min"], theme["rain_max"])
-        color = f"rgb(0, {green}, 0)"
+
+        # Собственная яркость каждого символа (сохраняет эффект мерцания).
+        brightness = (
+            random.randint(theme["rain_min"], theme["rain_max"]) / 255.0
+        )
+
+        top_rgb = tuple(int(c * brightness) for c in RAIN_COLOR_TOP)
+        bot_rgb = tuple(int(c * brightness) for c in RAIN_COLOR_BOTTOM)
+        top_hex = "#{:02x}{:02x}{:02x}".format(*top_rgb)
+        bot_hex = "#{:02x}{:02x}{:02x}".format(*bot_rgb)
 
         svg += "<g>"
         svg += (
@@ -155,14 +167,22 @@ def build_matrix(theme_name: str) -> Path:
             f'repeatCount="indefinite" />'
         )
         svg += (
-            f'<text x="{x}" y="{-font_size}" fill="{color}" '
+            f'<text x="{x}" y="{-font_size}" fill="{top_hex}" '
             f'font-family="Consolas, Menlo, DejaVu Sans Mono, '
             f'Noto Sans Mono, monospace" '
             f'font-size="{font_size}" text-anchor="middle">'
         )
+        # Цвет символа линейно уходит от cyan к green за то же время,
+        # за которое символ пролетает сверху вниз.
+        svg += (
+            f'<animate attributeName="fill" '
+            f'values="{top_hex};{bot_hex}" '
+            f'dur="{dur}s" begin="{begin}s" '
+            f'repeatCount="indefinite" />'
+        )
         svg += (
             f'<animate attributeName="opacity" values="0;1;1;0" '
-            f'keyTimes="0;0.15;0.6;1" dur="{dur}s" begin="{begin}s" '
+            f'keyTimes="0;0.15;0.75;1" dur="{dur}s" begin="{begin}s" '
             f'repeatCount="indefinite" />'
         )
         svg += f"{char}</text></g>"
