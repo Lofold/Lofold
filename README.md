@@ -34,7 +34,7 @@
             />
             <img
                 src="https://raw.githubusercontent.com/Lofold/Lofold/matrix-output/matrix.svg"
-                width="1012"
+                width="972"
                 alt="Matrix + Tech Stack"
             />
         </picture>
