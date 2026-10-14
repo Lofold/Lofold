@@ -26,7 +26,8 @@ jobs:
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
 
-      # Публикует содержимое dist/ в orphan-ветку output через force-push.
+      # Публикует содержимое dist/ в orphan-ветку github-snake-output
+      # через force-push.
       # История ветки всегда — один коммит, main не трогается.
       - name: Publish to github-snake-output
         uses: crazy-max/ghaction-github-pages@v4

@@ -33,7 +33,7 @@
                 srcset="https://raw.githubusercontent.com/Lofold/Lofold/matrix-output/matrix.svg"
             />
             <img
-                src="https://raw.githubusercontent.com/Lofold/Lofold/matrix-output/matrix-dark.svg"
+                src="https://raw.githubusercontent.com/Lofold/Lofold/matrix-output/matrix.svg"
                 width="1012"
                 alt="Matrix + Tech Stack"
             />
@@ -59,7 +59,7 @@
                 srcset="https://raw.githubusercontent.com/Lofold/Lofold/github-snake-output/github-snake.svg"
             />
             <img
-                src="https://raw.githubusercontent.com/Lofold/Lofold/github-snake-output/github-snake-dark.svg"
+                src="https://raw.githubusercontent.com/Lofold/Lofold/github-snake-output/github-snake.svg"
                 width="1012"
                 alt="GitHub Contribution Snake"
             />
