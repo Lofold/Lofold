@@ -2,30 +2,41 @@ name: Update Snake Heart
 
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '0 0 * * *'
   workflow_dispatch:
 
-permissions:
-  contents: write
+concurrency:
+  group: snake-heart-output
+  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
     steps:
       - uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          python-version: '3.12'
 
+      # Скрипт пишет assets/snake_heart.svg
       - name: Generate SVG
         run: python scripts/snake_heart.py
 
-      - name: Commit and Push
+      - name: Prepare dist
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add assets/snake_heart.svg
-          git commit -m "Update snake_heart.svg" || exit 0
-          git push
+          mkdir -p dist
+          cp assets/snake_heart.svg dist/
+
+      - name: Publish to snake-heart-output
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          build_dir: dist
+          target_branch: snake-heart-output
+        env:
+          GITHUB_TOKEN: ${{ github.token }}

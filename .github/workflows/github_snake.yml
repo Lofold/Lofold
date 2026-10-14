@@ -5,6 +5,11 @@ on:
     - cron: '0 0 * * *' # раз в сутки, 00:00 UTC
   workflow_dispatch:
 
+# Отдельная группа: этот workflow не должен ждать matrix или snake_heart.
+concurrency:
+  group: snake-output
+  cancel-in-progress: false
+
 jobs:
   generate:
     runs-on: ubuntu-latest
@@ -21,10 +26,12 @@ jobs:
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
 
-      - name: Publish snake animation
+      # Публикует содержимое dist/ в orphan-ветку output через force-push.
+      # История ветки всегда — один коммит, main не трогается.
+      - name: Publish to github-snake-output
         uses: crazy-max/ghaction-github-pages@v4
         with:
           build_dir: dist
-          target_branch: output
+          target_branch: github-snake-output
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}

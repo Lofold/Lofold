@@ -1,0 +1,26 @@
+# Локально сгенерированные SVG — публикуются в ветки *-output,
+# в main не нужны
+assets/matrix.svg
+assets/matrix-dark.svg
+assets/snake_heart.svg
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Виртуальное окружение (если создашь venv прямо в репо)
+.venv/
+venv/
+env/
+
+# VS Code (локальные настройки, если появятся)
+.vscode/
+
+# ОС
+.DS_Store
+Thumbs.db
+desktop.ini

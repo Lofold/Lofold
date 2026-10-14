@@ -2,30 +2,44 @@ name: Update Matrix SVG
 
 on:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '0 * * * *'   # раз в час
   workflow_dispatch:
 
-permissions:
-  contents: write
+concurrency:
+  group: matrix-output
+  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
     steps:
       - uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          python-version: '3.12'
 
+      # Скрипт пишет assets/matrix.svg и assets/matrix-dark.svg
       - name: Generate SVG
         run: python scripts/matrix.py
 
-      - name: Commit and Push
+      # ghaction-github-pages публикует ЦЕЛИКОМ build_dir.
+      # Если указать build_dir: assets — уедут и иконки, и snake_heart.svg.
+      # Поэтому копируем только нужные два файла в чистый dist/.
+      - name: Prepare dist
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add assets/matrix.svg
-          git commit -m "Update matrix.svg" || exit 0
-          git push
+          mkdir -p dist
+          cp assets/matrix.svg assets/matrix-dark.svg dist/
+
+      - name: Publish to matrix-output
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          build_dir: dist
+          target_branch: matrix-output
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
