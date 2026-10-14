@@ -22,17 +22,15 @@
         aria-label="Lofold Tech Stack"
     >
         <picture>
+            <!-- prettier-ignore -->
             <source
                 media="(prefers-color-scheme: dark)"
-                srcset="
-                    https://raw.githubusercontent.com/Lofold/Lofold/matrix-output/matrix-dark.svg
-                "
+                srcset="https://raw.githubusercontent.com/Lofold/Lofold/matrix-output/matrix-dark.svg"
             />
+            <!-- prettier-ignore -->
             <source
                 media="(prefers-color-scheme: light)"
-                srcset="
-                    https://raw.githubusercontent.com/Lofold/Lofold/matrix-output/matrix.svg
-                "
+                srcset="https://raw.githubusercontent.com/Lofold/Lofold/matrix-output/matrix.svg"
             />
             <img
                 src="https://raw.githubusercontent.com/Lofold/Lofold/matrix-output/matrix-dark.svg"
@@ -50,20 +48,18 @@
         aria-label="Lofold GitHub Snake"
     >
         <picture>
+            <!-- prettier-ignore -->
             <source
                 media="(prefers-color-scheme: dark)"
-                srcset="
-                    https://raw.githubusercontent.com/Lofold/Lofold/github-snake-output/github-snake-dark.svg
-                "
+                srcset="https://raw.githubusercontent.com/Lofold/Lofold/github-snake-output/github-snake-dark.svg"
             />
+            <!-- prettier-ignore -->
             <source
                 media="(prefers-color-scheme: light)"
-                srcset="
-                    https://raw.githubusercontent.com/Lofold/Lofold/github-snake-output/github-snake.svg
-                "
+                srcset="https://raw.githubusercontent.com/Lofold/Lofold/github-snake-output/github-snake.svg"
             />
             <img
-                src="https://raw.githubusercontent.com/Lofold/Lofold/github-snake-output/github-snake.svg"
+                src="https://raw.githubusercontent.com/Lofold/Lofold/github-snake-output/github-snake-dark.svg"
                 width="1012"
                 alt="GitHub Contribution Snake"
             />
