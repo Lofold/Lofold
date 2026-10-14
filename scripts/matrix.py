@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import TypedDict
 
 # --- ХОЛСТ ---
-width = 972
+width = 1012
 height = 200
 
 # --- ДОЖДЬ ---

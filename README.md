@@ -9,7 +9,7 @@
     >
         <img
             src="https://capsule-render.vercel.app/api?type=waving&color=0:0d111700,50:39c5cf,100:0d111700&height=200&section=header&text=Lofold&fontFamily=monospace&fontSize=50&fontColor=39ccd7&animation=twinkling&fontAlign=15&fontAlignY=30&rotate=0&desc=Don%E2%80%99t+compete+with+me+in+indifference.-nl-In+indifference,+I%E2%80%99m+the+absolute.&descSize=16&descAlign=75&descAlignY=45"
-            width="1012"
+            width="100%"
             alt="Head"
         />
     </a>
@@ -34,7 +34,7 @@
             />
             <img
                 src="https://raw.githubusercontent.com/Lofold/Lofold/matrix-output/matrix.svg"
-                width="972"
+                width="96%"
                 alt="Matrix + Tech Stack"
             />
         </picture>
@@ -60,7 +60,7 @@
             />
             <img
                 src="https://raw.githubusercontent.com/Lofold/Lofold/github-snake-output/github-snake.svg"
-                width="1012"
+                width="100%"
                 alt="GitHub Contribution Snake"
             />
         </picture>
