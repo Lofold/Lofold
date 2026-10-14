@@ -2,7 +2,7 @@ name: Update Matrix SVG
 
 on:
   schedule:
-    - cron: '0 * * * *'   # раз в час
+    - cron: '0 * * * *'
   workflow_dispatch:
 
 concurrency:

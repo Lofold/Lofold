@@ -2,10 +2,10 @@ name: Generate GitHub Snake
 
 on:
   schedule:
-    - cron: '0 0 * * *' # раз в сутки, 00:00 UTC
+    - cron: '0 0 * * *'
   workflow_dispatch:
 
-# Отдельная группа: этот workflow не должен ждать matrix или snake_heart.
+# Отдельная группа: этот workflow не должен ждать matrix или snake-heart.
 concurrency:
   group: snake-output
   cancel-in-progress: false
@@ -23,8 +23,8 @@ jobs:
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/github-snake.svg
-            dist/github-snake-dark.svg?palette=github-dark
+            dist/github-snake-light.svg?color_snake=%2339c5cf&color_dots=%23ebedf0,%239be9a8,%2340c463,%2330a14e,%23216e39
+            dist/github-snake-dark.svg?palette=github-dark&color_snake=%2339c5cf&color_dots=%23161b22,%230e4429,%23006d32,%2326a641,%2339d353
 
       # Публикует содержимое dist/ в orphan-ветку github-snake-output
       # через force-push.

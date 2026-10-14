@@ -56,10 +56,10 @@
             <!-- prettier-ignore -->
             <source
                 media="(prefers-color-scheme: light)"
-                srcset="https://raw.githubusercontent.com/Lofold/Lofold/github-snake-output/github-snake.svg"
+                srcset="https://raw.githubusercontent.com/Lofold/Lofold/github-snake-output/github-snake-light.svg"
             />
             <img
-                src="https://raw.githubusercontent.com/Lofold/Lofold/github-snake-output/github-snake.svg"
+                src="https://raw.githubusercontent.com/Lofold/Lofold/github-snake-output/github-snake-light.svg"
                 width="100%"
                 alt="GitHub Contribution Snake"
             />
