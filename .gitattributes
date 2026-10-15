@@ -1,12 +1,25 @@
 # Нормализация переводов строк: в репо всегда LF.
-* text=auto
+# Исключение — Windows-скрипты (.bat/.cmd/.ps1), они в CRLF.
 
-*.py   text eol=lf
-*.yml  text eol=lf
-*.yaml text eol=lf
-*.md   text eol=lf
-*.svg  text eol=lf
-*.json text eol=lf
-*.txt  text eol=lf
-*.toml text eol=lf
-*.cfg  text eol=lf
+* text=auto eol=lf
+
+# Windows-скрипты
+*.bat  text eol=crlf
+*.cmd  text eol=crlf
+*.ps1  text eol=crlf
+
+# Бинарные файлы — не конвертировать
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.pdf   binary
+*.zip   binary
+*.gz    binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.otf   binary
+*.exe   binary
+*.dll   binary
